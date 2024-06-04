@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import styles from "./Login.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
+import images from "../../../Assets";
 const cx = classNames.bind(styles);
 
 function Login() {
@@ -39,7 +40,10 @@ function Login() {
       });
   };
   return (
-    <div className={cx("wrapper")}>
+    <div
+      className={cx("wrapper")}
+      style={{ backgroundImage: `url${images.login}` }}
+    >
       <div className={cx("container")}>
         <div className={cx("container_center")}>
           <div className={cx("infor")}>
