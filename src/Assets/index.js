@@ -4,6 +4,7 @@ const images = {
   percent: require("./images/3.png"),
   game: require("./images/4.png"),
   login: require("./images/anh1.jpg"),
+  logo: require("./images/logo.png"),
 };
 
 export default images;

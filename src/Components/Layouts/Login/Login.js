@@ -48,7 +48,7 @@ function Login() {
         <div className={cx("container_center")}>
           <div className={cx("infor")}>
             <div className={cx("image")}>
-              <img src="https://slottool.top/logo.png"></img>
+              <img src={images.logo}></img>
             </div>
             <div></div>
           </div>
