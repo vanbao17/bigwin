@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import styles from "./SideBar.module.scss";
+import images from "../../../Assets";
 
 const cx = classNames.bind(styles);
 function SideBar() {
@@ -8,7 +9,7 @@ function SideBar() {
       <div className={cx("container")}>
         <div className={cx("infor_web")}>
           <div className={cx("img_infor")}>
-            <img src="https://th.bing.com/th/id/OIP.lruLONjbVNYyN7ruSQREMQHaE8?rs=1&pid=ImgDetMain"></img>
+            <img src={images.logo} style={{ marginRight: "10px" }}></img>
           </div>
           <span>WebApplication</span>
         </div>
