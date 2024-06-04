@@ -42,7 +42,7 @@ function Login() {
   return (
     <div
       className={cx("wrapper")}
-      style={{ backgroundImage: `url${images.login}` }}
+      style={{ backgroundImage: `url(${images.login})` }}
     >
       <div className={cx("container")}>
         <div className={cx("container_center")}>
