@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import styles from "./Register.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
+import images from "../../../Assets";
 const cx = classNames.bind(styles);
 
 function Register() {
@@ -57,12 +58,15 @@ function Register() {
     }
   };
   return (
-    <div className={cx("wrapper")}>
+    <div
+      className={cx("wrapper")}
+      style={{ backgroundImage: `url(${images.login})` }}
+    >
       <div className={cx("container")}>
         <div className={cx("container_center")}>
           <div className={cx("infor")}>
             <div className={cx("image")}>
-              <img src="https://slottool.top/logo.png"></img>
+              <img src={images.logo}></img>
             </div>
             <div></div>
           </div>
