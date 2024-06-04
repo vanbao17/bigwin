@@ -26,7 +26,7 @@ function Register() {
         },
         body: JSON.stringify({ username }),
       };
-      fetch("http://slottool.xyz/api/v1/checkuser", options)
+      fetch("https://slottool.xyz/api/v1/checkuser", options)
         .then((response) => {
           if (response.status == 200) {
             setwarning("Tên người dùng đã tồn tại");
@@ -39,7 +39,7 @@ function Register() {
               },
               body: JSON.stringify({ username, password, sdt }),
             };
-            fetch("http://slottool.xyz/api/v1/register", options_insert)
+            fetch("https://slottool.xyz/api/v1/register", options_insert)
               .then((responseInsert) => {
                 if (responseInsert.status == 200) {
                   localStorage.getItem("username", username);
@@ -62,7 +62,7 @@ function Register() {
         <div className={cx("container_center")}>
           <div className={cx("infor")}>
             <div className={cx("image")}>
-              <img src="http://slottool.top/logo.png"></img>
+              <img src="https://slottool.top/logo.png"></img>
             </div>
             <div></div>
           </div>

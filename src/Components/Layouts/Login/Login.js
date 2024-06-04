@@ -20,7 +20,7 @@ function Login() {
       },
       body: JSON.stringify({ username, password }),
     };
-    fetch("http://slottool.xyz/api/v1/login", options)
+    fetch("https://slottool.xyz/api/v1/login", options)
       .then((response) => {
         if (response.status == 200) {
           if (username == "admin") {
@@ -44,7 +44,7 @@ function Login() {
         <div className={cx("container_center")}>
           <div className={cx("infor")}>
             <div className={cx("image")}>
-              <img src="http://slottool.top/logo.png"></img>
+              <img src="https://slottool.top/logo.png"></img>
             </div>
             <div></div>
           </div>

@@ -19,7 +19,7 @@ function Admin() {
         },
         body: JSON.stringify({ username }),
       };
-      fetch("http://slottool.xyz/api/v1/finduser", options)
+      fetch("https://slottool.xyz/api/v1/finduser", options)
         .then((response) => response.json())
         .then((data) => {
           if (data != undefined) {
@@ -30,7 +30,7 @@ function Admin() {
           console.log(err);
         });
     } else {
-      fetch("http://slottool.xyz/api/v1/getuser")
+      fetch("https://slottool.xyz/api/v1/getuser")
         .then((response) => response.json())
         .then((data) => {
           if (data != undefined) {
@@ -43,7 +43,7 @@ function Admin() {
     }
   };
   useEffect(() => {
-    fetch("http://slottool.xyz/api/v1/getuser")
+    fetch("https://slottool.xyz/api/v1/getuser")
       .then((response) => response.json())
       .then((data) => {
         if (data != undefined) {

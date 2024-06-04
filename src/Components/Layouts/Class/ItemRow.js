@@ -21,7 +21,7 @@ function ItemRow({ data, statePage }) {
       },
       body: JSON.stringify({ idclass, nameclass }),
     };
-    fetch("http://slottool.xyz/api/v1/updateNameClass", options)
+    fetch("https://slottool.xyz/api/v1/updateNameClass", options)
       .then((response) => {
         if (response.status == 200) {
           statePage(state1);
@@ -49,7 +49,7 @@ function ItemRow({ data, statePage }) {
       },
       body: JSON.stringify({ idclass, idst }),
     };
-    fetch("http://slottool.xyz/api/v1/updateStateClass", options)
+    fetch("https://slottool.xyz/api/v1/updateStateClass", options)
       .then((response) => {
         if (response.status == 200) {
           statePage(state1);

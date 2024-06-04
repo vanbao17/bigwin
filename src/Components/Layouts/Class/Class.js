@@ -25,11 +25,11 @@ function Class() {
       },
       body: JSON.stringify({ nameclass }),
     };
-    fetch("http://slottool.xyz/api/v1/addclass", options)
+    fetch("https://slottool.xyz/api/v1/addclass", options)
       .then((response) => {
         if (response.status == 200) {
           setstatepopup(!setstatepopup);
-          fetch("http://slottool.xyz/api/v1/getclass")
+          fetch("https://slottool.xyz/api/v1/getclass")
             .then((response) => response.json())
             .then((data) => {
               if (data != undefined) {
@@ -55,7 +55,7 @@ function Class() {
         },
         body: JSON.stringify({ nameclass }),
       };
-      fetch("http://slottool.xyz/api/v1/findclass", options)
+      fetch("https://slottool.xyz/api/v1/findclass", options)
         .then((response) => response.json())
         .then((data) => {
           if (data != undefined) {
@@ -66,7 +66,7 @@ function Class() {
           console.log(err);
         });
     } else {
-      fetch("http://slottool.xyz/api/v1/getclass")
+      fetch("https://slottool.xyz/api/v1/getclass")
         .then((response) => response.json())
         .then((data) => {
           if (data != undefined) {
@@ -79,7 +79,7 @@ function Class() {
     }
   };
   useEffect(() => {
-    fetch("http://slottool.xyz/api/v1/getclass")
+    fetch("https://slottool.xyz/api/v1/getclass")
       .then((response) => response.json())
       .then((data) => {
         if (data != undefined) {

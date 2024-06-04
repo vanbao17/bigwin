@@ -17,7 +17,7 @@ function ItemRow({ data, statePage }) {
   const refMax = useRef();
   const selectRef = useRef();
   useEffect(() => {
-    fetch("http://slottool.xyz/api/v1/getclass")
+    fetch("https://slottool.xyz/api/v1/getclass")
       .then((response) => response.json())
       .then((data) => {
         if (data != undefined) {
@@ -42,7 +42,7 @@ function ItemRow({ data, statePage }) {
       },
       body: JSON.stringify({ namegame, image, min, max, idclass, id_game }),
     };
-    fetch("http://slottool.xyz/api/v1/updateGame", options)
+    fetch("https://slottool.xyz/api/v1/updateGame", options)
       .then((response) => {
         if (response.status == 200) {
           statePage(state1);
@@ -70,7 +70,7 @@ function ItemRow({ data, statePage }) {
       },
       body: JSON.stringify({ idgame, idst }),
     };
-    fetch("http://slottool.xyz/api/v1/updateGameState", options)
+    fetch("https://slottool.xyz/api/v1/updateGameState", options)
       .then((response) => {
         if (response.status == 200) {
           statePage(state1);

@@ -23,7 +23,7 @@ function ItemRow({ data, statePage }) {
       },
       body: JSON.stringify({ iduser, idaccu }),
     };
-    fetch("http://slottool.xyz/api/v1/updateAccuracy", options)
+    fetch("https://slottool.xyz/api/v1/updateAccuracy", options)
       .then((response) => {
         if (response.status == 200) {
           statePage(state1);
@@ -51,7 +51,7 @@ function ItemRow({ data, statePage }) {
       },
       body: JSON.stringify({ iduser, idst }),
     };
-    fetch("http://slottool.xyz/api/v1/updateState", options)
+    fetch("https://slottool.xyz/api/v1/updateState", options)
       .then((response) => {
         if (response.status == 200) {
           statePage(state1);

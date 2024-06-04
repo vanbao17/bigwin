@@ -18,7 +18,7 @@ function PopupUpPass({ iduser, handleClosePopup }) {
       body: JSON.stringify({ iduser, password }),
     };
 
-    fetch("http://slottool.xyz/api/v1/updatePassword", options)
+    fetch("https://slottool.xyz/api/v1/updatePassword", options)
       .then((response) => {
         console.log(response);
         if (response.status == 200) {

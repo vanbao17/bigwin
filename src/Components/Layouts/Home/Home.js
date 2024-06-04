@@ -25,7 +25,7 @@ function Home() {
       },
       body: JSON.stringify({ idClass }),
     };
-    fetch("http://slottool.xyz/api/v1/getGameWithClass", options)
+    fetch("https://slottool.xyz/api/v1/getGameWithClass", options)
       .then((response) => response.json())
       .then((data) => {
         if (data != undefined) {
@@ -46,7 +46,7 @@ function Home() {
       },
       body: JSON.stringify({ username }),
     };
-    fetch("http://slottool.xyz/api/v1/findwithusername", options)
+    fetch("https://slottool.xyz/api/v1/findwithusername", options)
       .then((response) => {
         return response.json();
       })
@@ -60,7 +60,7 @@ function Home() {
             },
             body: JSON.stringify({ password, iduser }),
           };
-          fetch("http://slottool.xyz/api/v1/updatePassword", options1)
+          fetch("https://slottool.xyz/api/v1/updatePassword", options1)
             .then((response1) => {
               if (response1.status == 200) {
                 setstatepopup(!setstatepopup);
@@ -76,7 +76,7 @@ function Home() {
       });
   };
   useEffect(() => {
-    fetch("http://slottool.xyz/api/v1/getclass")
+    fetch("https://slottool.xyz/api/v1/getclass")
       .then((response) => response.json())
       .then((data) => {
         if (data != undefined) {
