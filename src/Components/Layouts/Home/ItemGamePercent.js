@@ -31,13 +31,13 @@ function ItemGamePercent({ data }) {
   });
   console.log(isLageScreen);
   const handleCheckColor = (num) => {
-    if (num >= 0 && num <= 50) {
+    if (num >= 0 && num <= 30) {
       return "#b00c0c";
     } else {
-      if (num >= 50 && num <= 80) {
+      if (num > 30 && num <= 70) {
         return "#faf205";
       } else {
-        return "#0509fa ";
+        return "#05f721";
       }
     }
   };
@@ -121,7 +121,7 @@ function ItemGamePercent({ data }) {
             style={{
               width: `${
                 isScreen == true && isminScreen == true
-                  ? Math.floor((435 * percent) / 100)
+                  ? Math.floor((425 * percent) / 100)
                   : isSmallScreen == true
                   ? Math.floor((150 * percent) / 100)
                   : isLageScreen == true && lagrgeScreen == true
