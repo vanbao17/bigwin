@@ -25,7 +25,7 @@ function Home() {
       },
       body: JSON.stringify({ idClass }),
     };
-    fetch("https://slottool.xyz/api/v1/getGameWithClass", options)
+    fetch("https://slottool.xyz/api/v1/getGameWithClassState", options)
       .then((response) => response.json())
       .then((data) => {
         if (data != undefined) {

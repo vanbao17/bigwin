@@ -8,6 +8,11 @@ import Popup from "../../Popup/Popup";
 const cx = classNames.bind(styles);
 function ItemRow({ data, statePage }) {
   const [state, setstate] = useState(false);
+  const [test, settest] = useState(null);
+  const [test1, settest1] = useState(null);
+  const [test2, settest2] = useState(null);
+  const [test3, settest3] = useState(null);
+  const [test4, settest4] = useState(null);
   const [classes, setclasses] = useState([]);
   const [state1, setstate1] = useState(false);
   const [statepopup, setstatepopup] = useState(false);
@@ -16,6 +21,12 @@ function ItemRow({ data, statePage }) {
   const refMin = useRef();
   const refMax = useRef();
   const selectRef = useRef();
+  const handleInputClick = (e, data) => {
+    setIsEditable(true);
+    e.target.value = data;
+    refNameClass.current.removeAttribute("readOnly");
+  };
+  const [isEditable, setIsEditable] = useState(false);
   useEffect(() => {
     fetch("https://slottool.xyz/api/v1/getclass")
       .then((response) => response.json())
@@ -125,7 +136,12 @@ function ItemRow({ data, statePage }) {
               type="text"
               className={cx("username")}
               name="username"
-              placeholder={data.name_game}
+              value={test == null ? data.name_game : test}
+              readOnly={!isEditable}
+              onClick={(e) => {
+                handleInputClick(e, data.name_game);
+              }}
+              onChange={(e) => settest(e.target.value)}
             ></input>
           </div>
           <div className={cx("container_input")}>
@@ -135,7 +151,12 @@ function ItemRow({ data, statePage }) {
               type="text"
               className={cx("username")}
               name="username"
-              placeholder={data.min}
+              value={test1 == null ? data.min : test1}
+              readOnly={!isEditable}
+              onClick={(e) => {
+                handleInputClick(e, data.min);
+              }}
+              onChange={(e) => settest1(e.target.value)}
             ></input>
           </div>
           <div className={cx("container_input")}>
@@ -144,8 +165,13 @@ function ItemRow({ data, statePage }) {
               ref={refMax}
               type="text"
               className={cx("username")}
-              placeholder={data.max}
               name="username"
+              value={test2 == null ? data.max : test2}
+              readOnly={!isEditable}
+              onClick={(e) => {
+                handleInputClick(e, data.max);
+              }}
+              onChange={(e) => settest2(e.target.value)}
             ></input>
           </div>
           <div className={cx("container_input")}>
@@ -154,8 +180,13 @@ function ItemRow({ data, statePage }) {
               ref={refImage}
               type="text"
               className={cx("username")}
-              placeholder={data.link_image}
               name="username"
+              value={test3 == null ? data.link_image : test3}
+              readOnly={!isEditable}
+              onClick={(e) => {
+                handleInputClick(e, data.link_image);
+              }}
+              onChange={(e) => settest3(e.target.value)}
             ></input>
           </div>
           <div className={cx("container_input")}>
@@ -167,7 +198,6 @@ function ItemRow({ data, statePage }) {
                     {cls.name_class}
                   </option>;
                 }
-
                 return (
                   <option key={index} value={cls.id_class}>
                     {cls.name_class}

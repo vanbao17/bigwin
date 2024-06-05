@@ -12,14 +12,15 @@ function ItemGamePercent({ data }) {
   const [color, setcolor] = useState("");
   const [randomNumbers, setRandomNumbers] = useState([]);
   const isSmallScreen = useMediaQuery({ query: "(max-width:600px)" });
+
   const handleCheckColor = (num) => {
     if (num >= 0 && num <= 50) {
-      return "red";
+      return "#b00c0c";
     } else {
       if (num >= 50 && num <= 80) {
-        return "yellow";
+        return "#faf205";
       } else {
-        return "blue";
+        return "#0509fa ";
       }
     }
   };
@@ -51,12 +52,18 @@ function ItemGamePercent({ data }) {
     return () => clearInterval(intervalId);
   }, []);
   useEffect(() => {
-    const intervalId = setInterval(() => {
+    const currentNumber = () => {
       const min = data.min;
       const max = data.max;
       const newRandomNumber = Math.random() * (max - min + 1) + min;
+      return newRandomNumber.toFixed(1);
+    };
+    const intervalId = setInterval(() => {
+      const min = Math.max(currentNumber() - 5, data.min);
+      const max = Math.min(currentNumber() + 5, data.max);
+      const newRandomNumber = Math.random() * (max - min + 1) + min;
       setpercent(newRandomNumber.toFixed(1));
-    }, 1000);
+    }, 5000);
     return () => clearInterval(intervalId);
   }, []);
   useEffect(() => {
@@ -97,10 +104,10 @@ function ItemGamePercent({ data }) {
             style={{
               width: `${
                 isSmallScreen == false
-                  ? Math.floor((435 * percent) / 100)
+                  ? Math.floor((325 * percent) / 100)
                   : Math.floor((130 * percent) / 100)
               }px`,
-              // backgroundColor: `${color}`,
+              backgroundColor: `${handleCheckColor(percent)}`,
             }}
             className={cx("progress_bar")}
           ></div>

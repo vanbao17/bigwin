@@ -75,7 +75,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    gap: 100px;
+    gap: 15px;
   }
   .container_game {
     width: 90%;
@@ -1043,7 +1043,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 100px;
-    gap: 100px;
+    gap: 50px;
   }
   .container_game {
     width: 50%;
@@ -1170,21 +1170,21 @@
     .progress_bar {
       position: absolute;
       top: 33%;
-      background-size: 400% 100% !important;
+      // background-size: 400% 100% !important;
       left: 28.5%;
       height: 70%;
-      background: linear-gradient(
-        45deg,
-        red,
-        blue,
-        green,
-        yellow,
-        #e11d74,
-        black,
-        #ffff00,
-        #aa0000
-      );
-      animation: animate1 25s linear infinite;
+      // background: linear-gradient(
+      //   45deg,
+      //   red,
+      //   blue,
+      //   green,
+      //   yellow,
+      //   #e11d74,
+      //   black,
+      //   #ffff00,
+      //   #aa0000
+      // );
+      // animation: animate1 25s linear infinite;
       border-radius: 5px;
       z-index: 1;
     }
