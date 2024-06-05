@@ -121,9 +121,9 @@ function ItemGamePercent({ data }) {
             style={{
               width: `${
                 isScreen == true && isminScreen == true
-                  ? Math.floor((425 * percent) / 100)
+                  ? Math.floor((400 * percent) / 100)
                   : isSmallScreen == true
-                  ? Math.floor((150 * percent) / 100)
+                  ? Math.floor((130 * percent) / 100)
                   : isLageScreen == true && lagrgeScreen == true
                   ? Math.floor((350 * percent) / 100)
                   : lagrgeScreenLage == true && lagrgeScreenLageLage == true
