@@ -19,7 +19,17 @@ function ItemGamePercent({ data }) {
   const isLageScreen = useMediaQuery({
     query: "(min-width:1550px)",
   });
-  console.log(isScreen, isminScreen);
+  const lagrgeScreen = useMediaQuery({
+    query: "(max-width:2000px)",
+  });
+
+  const lagrgeScreenLage = useMediaQuery({
+    query: "(min-width:2000px)",
+  });
+  const lagrgeScreenLageLage = useMediaQuery({
+    query: "(max-width:2500px)",
+  });
+  console.log(isLageScreen);
   const handleCheckColor = (num) => {
     if (num >= 0 && num <= 50) {
       return "#b00c0c";
@@ -114,9 +124,12 @@ function ItemGamePercent({ data }) {
                   ? Math.floor((435 * percent) / 100)
                   : isSmallScreen == true
                   ? Math.floor((150 * percent) / 100)
-                  : isLageScreen == true
-                  ? Math.floor((325 * percent) / 100)
-                  : 0
+                  : isLageScreen == true && lagrgeScreen == true
+                  ? Math.floor((350 * percent) / 100)
+                  : lagrgeScreenLage == true && lagrgeScreenLageLage == true
+                  ? Math.floor((435 * percent) / 100)
+                  : (435 * percent) / 100
+
                 // isSmallScreen == true
                 //   ? Math.floor((130 * percent) / 100)
                 //   : isScreen == true
