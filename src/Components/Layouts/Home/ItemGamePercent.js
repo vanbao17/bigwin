@@ -12,8 +12,14 @@ function ItemGamePercent({ data }) {
   const [color, setcolor] = useState("");
   const [randomNumbers, setRandomNumbers] = useState([]);
   const isSmallScreen = useMediaQuery({ query: "(max-width:768px)" });
-  const isSmallTiniScreen = useMediaQuery({ query: "(max-width:600px)" });
-
+  const isminScreen = useMediaQuery({ query: "(min-width:768px)" });
+  const isScreen = useMediaQuery({
+    query: "(max-width:1550px)",
+  });
+  const isLageScreen = useMediaQuery({
+    query: "(min-width:1550px)",
+  });
+  console.log(isScreen, isminScreen);
   const handleCheckColor = (num) => {
     if (num >= 0 && num <= 50) {
       return "#b00c0c";
@@ -104,9 +110,20 @@ function ItemGamePercent({ data }) {
           <div
             style={{
               width: `${
-                isSmallScreen == false
+                isScreen == true && isminScreen == true
+                  ? Math.floor((435 * percent) / 100)
+                  : isSmallScreen == true
+                  ? Math.floor((150 * percent) / 100)
+                  : isLageScreen == true
                   ? Math.floor((325 * percent) / 100)
-                  : Math.floor((130 * percent) / 100)
+                  : 0
+                // isSmallScreen == true
+                //   ? Math.floor((130 * percent) / 100)
+                //   : isScreen == true
+                //   ? Math.floor((435 * percent) / 100)
+                //   : isLageScreen == true
+                //   ? Math.floor((325 * percent) / 100)
+                //   : 0
               }px`,
               backgroundColor: `${handleCheckColor(percent)}`,
             }}

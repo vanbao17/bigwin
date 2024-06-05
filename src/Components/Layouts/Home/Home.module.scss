@@ -203,21 +203,21 @@
     .progress_bar {
       position: absolute;
       top: 33%;
-      background-size: 400% 100% !important;
+      // background-size: 400% 100% !important;
       left: 28.5%;
       height: 70%;
-      background: linear-gradient(
-        45deg,
-        red,
-        blue,
-        green,
-        yellow,
-        #e11d74,
-        black,
-        #ffff00,
-        #aa0000
-      );
-      animation: animate1 25s linear infinite;
+      // background: linear-gradient(
+      //   45deg,
+      //   red,
+      //   blue,
+      //   green,
+      //   yellow,
+      //   #e11d74,
+      //   black,
+      //   #ffff00,
+      //   #aa0000
+      // );
+      // animation: animate1 25s linear infinite;
       border-radius: 5px;
       z-index: 1;
     }
@@ -1409,21 +1409,21 @@
     .progress_bar {
       position: absolute;
       top: 33%;
-      background-size: 400% 100% !important;
+      // background-size: 400% 100% !important;
       left: 28.5%;
       height: 70%;
-      background: linear-gradient(
-        45deg,
-        red,
-        blue,
-        green,
-        yellow,
-        #e11d74,
-        black,
-        #ffff00,
-        #aa0000
-      );
-      animation: animate1 25s linear infinite;
+      // background: linear-gradient(
+      //   45deg,
+      //   red,
+      //   blue,
+      //   green,
+      //   yellow,
+      //   #e11d74,
+      //   black,
+      //   #ffff00,
+      //   #aa0000
+      // );
+      // animation: animate1 25s linear infinite;
       border-radius: 5px;
       z-index: 1;
     }
