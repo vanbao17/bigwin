@@ -29,7 +29,6 @@ function ItemGamePercent({ data }) {
   const lagrgeScreenLageLage = useMediaQuery({
     query: "(max-width:2500px)",
   });
-  console.log(isLageScreen);
   const handleCheckColor = (num) => {
     if (num >= 0 && num <= 30) {
       return "#b00c0c";
@@ -76,8 +75,8 @@ function ItemGamePercent({ data }) {
       return newRandomNumber.toFixed(1);
     };
     const intervalId = setInterval(() => {
-      const min = Math.max(currentNumber() - 5, data.min);
-      const max = Math.min(currentNumber() + 5, data.max);
+      const min = Math.max(currentNumber() - 7, data.min);
+      const max = Math.min(currentNumber() + 7, data.max);
       const newRandomNumber = Math.random() * (max - min + 1) + min;
       setpercent(newRandomNumber.toFixed(1));
     }, 5000);
