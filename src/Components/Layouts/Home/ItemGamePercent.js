@@ -11,7 +11,8 @@ function ItemGamePercent({ data }) {
   const [percent3, setpercent3] = useState();
   const [color, setcolor] = useState("");
   const [randomNumbers, setRandomNumbers] = useState([]);
-  const isSmallScreen = useMediaQuery({ query: "(max-width:600px)" });
+  const isSmallScreen = useMediaQuery({ query: "(max-width:768px)" });
+  const isSmallTiniScreen = useMediaQuery({ query: "(max-width:600px)" });
 
   const handleCheckColor = (num) => {
     if (num >= 0 && num <= 50) {
