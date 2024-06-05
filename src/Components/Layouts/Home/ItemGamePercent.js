@@ -47,7 +47,7 @@ function ItemGamePercent({ data }) {
       const max = 35;
       const newRandomNumber = Math.random() * (max - min + 1) + min;
       setpercent3(newRandomNumber.toFixed(1));
-    }, 1000000);
+    }, 1000);
     return () => clearInterval(intervalId);
   }, []);
   useEffect(() => {
@@ -84,7 +84,7 @@ function ItemGamePercent({ data }) {
     <div className={cx("container_game")}>
       <div className={cx("game_item")}>
         <div className={cx("imagesgame")}>
-          <img src={images.game} alt="Example" />
+          <img src={images.test} alt="Example" />
         </div>
         <span className={cx("name_game")}>{data.name_game}</span>
 
@@ -92,17 +92,21 @@ function ItemGamePercent({ data }) {
           <img src={data.link_image}></img>
         </div>
         <span className={cx("num_percent")}>{percent}%</span>
-        <div
-          style={{
-            width: `${
-              isSmallScreen == false
-                ? Math.floor((435 * percent) / 100)
-                : Math.floor((130 * percent) / 100)
-            }px`,
-            // backgroundColor: `${color}`,
-          }}
-          className={cx("progress_bar")}
-        ></div>
+        <div className={cx("progress")}>
+          <div
+            style={{
+              width: `${
+                isSmallScreen == false
+                  ? Math.floor((435 * percent) / 100)
+                  : Math.floor((130 * percent) / 100)
+              }px`,
+              // backgroundColor: `${color}`,
+            }}
+            className={cx("progress_bar")}
+          ></div>
+          <div className={cx("background_progress")}></div>
+        </div>
+
         <div className={cx("background_linear")}></div>
       </div>
       <div className={cx("percent_game")}>

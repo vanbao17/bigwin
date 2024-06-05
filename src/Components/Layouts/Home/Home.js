@@ -98,7 +98,10 @@ function Home() {
     }
   }, [navigate]);
   return (
-    <div className={cx("wrapper")}>
+    <div
+      className={cx("wrapper")}
+      style={{ backgroundImage: `url(${images.background})` }}
+    >
       {statepopup == true ? (
         <Popup>
           <div className={cx("container_input")}>
