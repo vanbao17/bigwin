@@ -33,6 +33,27 @@ function ItemRow({ data, statePage }) {
         console.log(err);
       });
   };
+  const handleDelete = () => {
+    const idclass = data.id_class;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ idclass }),
+    };
+    fetch("https://slottool.xyz/api/v1/deleteclass", options)
+      .then((response) => {
+        if (response.status == 200) {
+          statePage(state1);
+          setstate1(!state1);
+          setstatepopup(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handlePopup = (state) => {
     setstatepopup(state);
   };
@@ -85,6 +106,7 @@ function ItemRow({ data, statePage }) {
             >
               Cập nhật
             </li>
+            <li onClick={handleDelete}>Xóa</li>
           </ul>
         ) : (
           <></>

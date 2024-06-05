@@ -34,6 +34,28 @@ function ItemRow({ data, statePage }) {
         console.log(err);
       });
   };
+  const handleDelete = () => {
+    const iduser = data.id_user;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ iduser }),
+    };
+    fetch("https://slottool.xyz/api/v1/deleteuser", options)
+      .then((response) => {
+        if (response.status == 200) {
+          statePage(state1);
+          setstate1(!state1);
+          setstatepopup(false);
+          setstate(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handlePopup = (state) => {
     setstatepopup(state);
     setbackgroundblack(state);
@@ -93,6 +115,7 @@ function ItemRow({ data, statePage }) {
             >
               Đổi mật khẩu
             </li>
+            <li onClick={handleDelete}>Xóa</li>
           </ul>
         ) : (
           <></>

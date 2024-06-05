@@ -7,11 +7,11 @@ function SideBar() {
   return (
     <div className={cx("wrapper")}>
       <div className={cx("container")}>
-        <div className={cx("infor_web")}>
+        <div className={cx("infor_web")} style={{ width: "100%" }}>
           <div className={cx("img_infor")}>
-            <img src={images.logo} style={{ marginRight: "10px" }}></img>
+            <img src={images.logo} style={{ borderRadius: "10px" }}></img>
           </div>
-          <span>WebApplication</span>
+          <span style={{ marginLeft: "15px" }}>Big Win</span>
         </div>
         <div className={cx("dashboard")}>
           <p>Dash Board</p>
@@ -24,6 +24,9 @@ function SideBar() {
         <div className={cx("game")}>
           <p>Game</p>
           <ul>
+            <li>
+              <a href="/admin">User</a>
+            </li>
             <li>
               <a href="/admin/room">Phòng</a>
             </li>

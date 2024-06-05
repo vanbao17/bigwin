@@ -16,6 +16,7 @@ function Class() {
   const handlePopup = () => {
     setstatepopup(!setstatepopup);
   };
+
   const handleAdd = () => {
     let nameclass = refNameClass.current.value;
     const options = {

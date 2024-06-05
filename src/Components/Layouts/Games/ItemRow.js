@@ -39,6 +39,27 @@ function ItemRow({ data, statePage }) {
         console.log(err);
       });
   }, []);
+  const handleDelete = () => {
+    const idgame = data.id_game;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ idgame }),
+    };
+    fetch("https://slottool.xyz/api/v1/deletegame", options)
+      .then((response) => {
+        if (response.status == 200) {
+          statePage(state1);
+          setstate1(!state1);
+          setstatepopup(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   const handleUpdateClass = () => {
     let namegame = refNameClass.current.value;
     let image = refImage.current.value;
@@ -86,6 +107,7 @@ function ItemRow({ data, statePage }) {
         if (response.status == 200) {
           statePage(state1);
           setstate1(!state1);
+          setstatepopup(!statepopup);
         }
       })
       .catch((err) => {
@@ -122,6 +144,7 @@ function ItemRow({ data, statePage }) {
             >
               Cập nhật
             </li>
+            <li onClick={handleDelete}>Xóa</li>
           </ul>
         ) : (
           <></>
@@ -213,6 +236,7 @@ function ItemRow({ data, statePage }) {
             <button onClick={handleUpdateClass} className={cx("update")}>
               <span>Sửa</span>
             </button>
+
             <button onClick={handlePopup} className={cx("close")}>
               <span>Hủy</span>
             </button>
